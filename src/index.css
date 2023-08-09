@@ -11,7 +11,42 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
+h2::selection{
+  color: #fff;
+  background: #FFB900;
+}
+h1::selection{
+  color: #fff;
+  background: #FFB900;
+}
+h3::selection{
+  color: #fff;
+  background: #FFB900;
+}
+p::selection{
+  color: #fff;
+  background: #FFB900;
+}
+div::selection{
+  color: #fff;
+  background: #FFB900;
+}
+button::selection{
+  color: #fff;
+  background: #FFB900;
+}
+img::selection{
+  color: #fff;
+  background: #FFB900;
+}
+a::selection{
+  color: #fff;
+  background: #FFB900;
+}
+span::selection{
+  color: #fff;
+  background: #FFB900;
+}
 *{
   margin: 0;
   padding: 0;
