@@ -1,15 +1,24 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
-import { Link, Outlet } from 'react-router-dom'
+import { json, Link, Outlet } from 'react-router-dom'
+import { LoginSocialGoogle } from 'reactjs-social-login'
+import { GoogleLoginButton } from 'react-social-login-buttons'
 import logo from '../img/logo.png'
 import profile from '../img/profile.png'
-function reload(){
+function reload() {
     setTimeout(() => {
         window.location.reload()
     }, 1);
 }
 const Navbar = () => {
+    function sign(data){
+        let data1 = {"name":data.name,"img":data.picture}
+        localStorage.setItem('data',JSON.stringify(data1))
+        let a = JSON.parse(localStorage.getItem('data'))
+        console.log(JSON.parse(localStorage.getItem('data')).name)
+        window.location.reload()
+    }
     return (
         <nav>
             <input type="checkbox" id="check" />
@@ -25,19 +34,40 @@ const Navbar = () => {
                     <li><a href="#">Biz haqimizda</a></li>
                 </Link>
                 <Link to='/' onClick={reload}>
-                <li><a href="#">Kurslar</a></li>
+                    <li><a href="#">Kurslar</a></li>
                 </Link>
                 <Link to='/' onClick={reload}>
-                <li><a href="#">Bog'lanish</a></li>
+                    <li><a href="#">Bog'lanish</a></li>
                 </Link>
                 <li><select className="tillar">
                     <option value="">uz</option>
                     <option value="">ru</option>
                 </select></li>
+                {(localStorage.getItem('data'))?
                 <div className="acount">
-                    <img src={profile} alt="" />
-                    <p>Rustam</p>
+                    <img src={JSON.parse(localStorage.getItem('data')).img} alt="" />
+                    <p>{JSON.parse(localStorage.getItem('data')).name}</p>
+                </div> :
+                <li>
+                <div>
+
+                    <LoginSocialGoogle 
+                        client_id={"1017279439046-c91kifk4o07mcfkr991pe02lm33u19ov.apps.googleusercontent.com"}
+                        access_type="offline"
+                        onResolve={({ provider, data }) => {
+                            console.log(provider, data);
+                            sign(data)
+                        }}
+                        
+                        onReject={(err) => {
+                            console.log(err);
+                        }}
+                    >
+                        <img src={profile} alt="" />
+                    </LoginSocialGoogle>
                 </div>
+                </li>
+                }
             </ul>
         </nav>
     );

@@ -21,7 +21,6 @@ import Home from './components/home';
 // }
 // card_anim()
 
-
 function App() {
   return (
     <div className="App">

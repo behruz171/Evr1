@@ -19,11 +19,8 @@ root.render(
             <Route path='/card' element={<Card />} />
             <Route path='/batafsil' element={<Batafsil />} />
         </Route>
-
-
       </Routes>
     </BrowserRouter>
-    {/* <App /> */}
   </React.StrictMode>
 );
 

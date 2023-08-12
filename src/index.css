@@ -81,6 +81,11 @@ nav ul li{
   line-height: 80px;
   margin: 0 5px;
 }
+.sign{
+  position: absolute;
+  display: flex;
+  width: 20%;
+}
 nav ul li a{
   color: white;
   font-size: 17px;
@@ -114,7 +119,10 @@ a.active,a:hover{
 }
 
 .acount img{
-  margin-bottom: -30px;
+  margin-bottom: -50px;
+  margin-left: 50px;
+  width: 75%;
+  height: 50%;
 }
 .acount p{
   margin-left: 15px;
@@ -627,7 +635,18 @@ section h2{
       }
   }
   .acount p{
-      margin-left: 75px;
+      /* margin-left: 75px; */
+  }
+  .acount img{
+    margin-bottom: 10px;
+    width: 50%;
+    height: 100%;
+  }
+  .acount{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
   .biz_h2{
       position: relative;
