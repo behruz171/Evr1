@@ -49,7 +49,7 @@ const Navbar = () => {
                     <p>{JSON.parse(localStorage.getItem('data')).name}</p>
                 </div> :
                 <li>
-                <div>
+                <div className='sign'>
 
                     <LoginSocialGoogle 
                         client_id={"1017279439046-c91kifk4o07mcfkr991pe02lm33u19ov.apps.googleusercontent.com"}

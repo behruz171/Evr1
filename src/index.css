@@ -81,10 +81,9 @@ nav ul li{
   line-height: 80px;
   margin: 0 5px;
 }
-.sign{
-  position: absolute;
-  display: flex;
-  width: 20%;
+.sign img{
+  cursor: pointer;
+  /* width:60px; */
 }
 nav ul li a{
   color: white;
@@ -123,6 +122,7 @@ a.active,a:hover{
   margin-left: 50px;
   width: 75%;
   height: 50%;
+  cursor: pointer;
 }
 .acount p{
   margin-left: 15px;
@@ -607,6 +607,9 @@ section h2{
   nav ul li a:hover,nav ul li a.active{
       background: none;
       color: #FFB900;
+  }
+  .sign img{
+    margin-left: 8%;
   }
 
   #check:checked ~ ul{
