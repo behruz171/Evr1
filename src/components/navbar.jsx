@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
-import { json, Link, Outlet } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 import { LoginSocialGoogle } from 'reactjs-social-login'
 import { GoogleLoginButton } from 'react-social-login-buttons'
 import logo from '../img/logo.png'
@@ -20,10 +20,11 @@ const Navbar = () => {
         window.location.reload()
     }
 
-    function logout(){
-        localStorage.setItem('data','')
+    function logout() {
+        localStorage.setItem('data', '')
         window.location.reload()
     }
+
     return (
         <nav>
             <input type="checkbox" id="check" />
@@ -33,23 +34,23 @@ const Navbar = () => {
             <img src={logo} alt="" />
             <ul>
                 <Link to='/' onClick={reload}>
-                    <li><a className="active" href="#">Asosiy sahifa</a></li>
+                    <li className='li1'><a className="active" href="#">Asosiy sahifa</a></li>
                 </Link>
                 <Link to='/batafsil' onClick={reload}>
-                    <li><a href="#">Biz haqimizda</a></li>
+                    <li className='li1'><a href="#">Biz haqimizda</a></li>
                 </Link>
                 <Link to='/' onClick={reload}>
-                    <li><a href="#">Kurslar</a></li>
+                    <li className='li1'><a href="#">Kurslar</a></li>
                 </Link>
                 <Link to='/' onClick={reload}>
-                    <li><a href="#">Bog'lanish</a></li>
+                    <li className='li1'><a href="#">Bog'lanish</a></li>
                 </Link>
-                <li><select className="tillar">
+                <li className='li1'><select className="tillar">
                     <option value="">uz</option>
                     <option value="">ru</option>
                 </select></li>
                 {(localStorage.getItem('data')) ?
-                    <li>
+                    <li className='li1'>
 
                         <div className="acount">
                             <img src={JSON.parse(localStorage.getItem('data')).img} alt="" />
@@ -57,7 +58,7 @@ const Navbar = () => {
                             <div onClick={logout} className='logout'><h3>logout</h3></div>
                         </div>
                     </li> :
-                    <li>
+                    <li className='li1'>
                         <div className='sign'>
 
                             <LoginSocialGoogle

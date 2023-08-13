@@ -10,8 +10,8 @@ const Boglanish = () => {
                     <p>Batafsil ma'lumot olish uchun ismingiz va raqamingizni qoldiring!</p>
                 </div>
                 <div className="b_input">
-                    <input type="text" placeholder="    Ism" />
-                    <input type="number" placeholder="   +998 (99)___ __ __" />
+                    <input type="text" placeholder="Ism" />
+                    <input type="number" placeholder="+998 (99)___ __ __" />
                     <button>Yuborish</button>
                 </div>
             </div>
