@@ -74,6 +74,8 @@ nav img{
 nav ul{
   float: right;
   margin-right: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 nav ul li{
@@ -112,16 +114,22 @@ a.active,a:hover{
 
 
 .acount{
-  display: inline-block;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .acount img{
-  margin-bottom: -50px;
+  /* margin-bottom: -10px; */
   margin-left: 50px;
-  width: 75%;
-  height: 50%;
+  padding: 0;
+  width: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.logout h3{
+  color: #fff;
+  margin-left: 30px;
   cursor: pointer;
 }
 .acount p{
@@ -586,6 +594,8 @@ section h2{
   ul{
       z-index: 3;
       position: fixed;
+      display: flex;
+      flex-direction: column;
       width: 100%;
       height: 100vh;
       /* background: #2c3e50; */
@@ -597,7 +607,7 @@ section h2{
   }
   nav ul li{
       display: block;
-      margin: 50px 0;
+      margin: 30px 0;
       line-height: 30px;
   }
   nav ul li a{
@@ -611,7 +621,9 @@ section h2{
   .sign img{
     margin-left: 8%;
   }
-
+  .acount img{
+    margin-left: 0;
+  }
   #check:checked ~ ul{
       left: 0;
   }
@@ -642,8 +654,8 @@ section h2{
   }
   .acount img{
     margin-bottom: 10px;
-    width: 50%;
-    height: 100%;
+    width: 50px;
+    /* height: 100%; */
   }
   .acount{
     display: flex;
@@ -651,6 +663,7 @@ section h2{
     align-items: center;
     flex-direction: column;
   }
+  
   .biz_h2{
       position: relative;
       left: -100px;

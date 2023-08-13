@@ -12,11 +12,16 @@ function reload() {
     }, 1);
 }
 const Navbar = () => {
-    function sign(data){
-        let data1 = {"name":data.name,"img":data.picture}
-        localStorage.setItem('data',JSON.stringify(data1))
+    function sign(data) {
+        let data1 = { "name": data.name, "img": data.picture }
+        localStorage.setItem('data', JSON.stringify(data1))
         let a = JSON.parse(localStorage.getItem('data'))
         console.log(JSON.parse(localStorage.getItem('data')).name)
+        window.location.reload()
+    }
+
+    function logout(){
+        localStorage.setItem('data','')
         window.location.reload()
     }
     return (
@@ -43,30 +48,34 @@ const Navbar = () => {
                     <option value="">uz</option>
                     <option value="">ru</option>
                 </select></li>
-                {(localStorage.getItem('data'))?
-                <div className="acount">
-                    <img src={JSON.parse(localStorage.getItem('data')).img} alt="" />
-                    <p>{JSON.parse(localStorage.getItem('data')).name}</p>
-                </div> :
-                <li>
-                <div className='sign'>
+                {(localStorage.getItem('data')) ?
+                    <li>
 
-                    <LoginSocialGoogle 
-                        client_id={"1017279439046-c91kifk4o07mcfkr991pe02lm33u19ov.apps.googleusercontent.com"}
-                        access_type="offline"
-                        onResolve={({ provider, data }) => {
-                            console.log(provider, data);
-                            sign(data)
-                        }}
-                        
-                        onReject={(err) => {
-                            console.log(err);
-                        }}
-                    >
-                        <img src={profile} alt="" />
-                    </LoginSocialGoogle>
-                </div>
-                </li>
+                        <div className="acount">
+                            <img src={JSON.parse(localStorage.getItem('data')).img} alt="" />
+                            <p>{JSON.parse(localStorage.getItem('data')).name}</p>
+                            <div onClick={logout} className='logout'><h3>logout</h3></div>
+                        </div>
+                    </li> :
+                    <li>
+                        <div className='sign'>
+
+                            <LoginSocialGoogle
+                                client_id={"1017279439046-c91kifk4o07mcfkr991pe02lm33u19ov.apps.googleusercontent.com"}
+                                access_type="offline"
+                                onResolve={({ provider, data }) => {
+                                    console.log(provider, data);
+                                    sign(data)
+                                }}
+
+                                onReject={(err) => {
+                                    console.log(err);
+                                }}
+                            >
+                                <img src={profile} alt="" />
+                            </LoginSocialGoogle>
+                        </div>
+                    </li>
                 }
             </ul>
         </nav>
