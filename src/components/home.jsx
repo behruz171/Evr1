@@ -5,8 +5,11 @@ import Vidio from './vidio';
 import BizH from './biz_h';
 import Boglanish from './boglanish';
 const Home = () => {
+
     return (
         <div>
+
+
             <Vidio />
             <BizH />
             <Card />

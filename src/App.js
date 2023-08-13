@@ -20,13 +20,13 @@ import Home from './components/home';
 //   });
 // }
 // card_anim()
-
 function App() {
+ 
   return (
     <div className="App">
       {/* <div className='container'> */}
-        <Navbar />
-        <Outlet/>
+      <Navbar />
+      <Outlet />
       {/* </div> */}
     </div>
   );
