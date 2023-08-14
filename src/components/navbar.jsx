@@ -6,6 +6,7 @@ import { LoginSocialGoogle } from 'reactjs-social-login'
 import { GoogleLoginButton } from 'react-social-login-buttons'
 import logo from '../img/logo.png'
 import profile from '../img/profile.png'
+import google from '../img/google.png'
 function reload() {
     setTimeout(() => {
         window.location.reload()
@@ -65,7 +66,6 @@ const Navbar = () => {
                                 client_id={"1017279439046-c91kifk4o07mcfkr991pe02lm33u19ov.apps.googleusercontent.com"}
                                 access_type="offline"
                                 onResolve={({ provider, data }) => {
-                                    console.log(provider, data);
                                     sign(data)
                                 }}
 
@@ -73,7 +73,7 @@ const Navbar = () => {
                                     console.log(err);
                                 }}
                             >
-                                <img src={profile} alt="" />
+                                <img src={google} alt="" />
                             </LoginSocialGoogle>
                         </div>
                     </li>

@@ -88,7 +88,12 @@ nav ul{
   margin: 0 5px;
 }
 .sign img{
+  /* position: relative;
+  top: 10px; */
+  margin-top: 10px;
   cursor: pointer;
+  padding: 0;
+  width: 50px;
   /* width:60px; */
 }
 
@@ -515,7 +520,7 @@ section h2{
   height: 300px;
   border-radius:40px;
   margin-top: 90px;
-  cursor: url("./img/cursor.png"),auto;
+  cursor: url("./img/cursor.png"),auto; 
 }
 .b_tittle h2{
   align-items: start;
@@ -625,9 +630,6 @@ section h2{
   .li1 a:hover,.li1 a.active{
       background: none;
       color: #FFB900;
-  }
-  .sign img{
-    margin-left: 8%;
   }
   .acount img{
     margin-left: 0;
